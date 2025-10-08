@@ -1,0 +1,20 @@
+[
+  {
+    "id": "coloracao",
+    "title": "Coloração",
+    "desc": "Tintura, luzes e correções de cor",
+    "price": "R$120–R$350"
+  },
+  {
+    "id": "tratamento",
+    "title": "Tratamentos",
+    "desc": "Reconstrução, hidratação e cauterização",
+    "price": "R$60–R$200"
+  },
+  {
+    "id": "corte",
+    "title": "Corte",
+    "desc": "Corte feminino e masculino",
+    "price": "R$30–R$90"
+  }
+]
