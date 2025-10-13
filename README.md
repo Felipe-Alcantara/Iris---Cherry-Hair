@@ -1,64 +1,38 @@
-# Íris — Cherry Hair 🍒
+# Cherry Hair 🍒
 
-Landing page responsiva em estilo coquette/feminino para apresentar os serviços de coloração, tratamentos e cortes da Íris. O foco é destacar o cuidado personalizado e facilitar o agendamento direto pelo WhatsApp.
+Um site que criei para o salão de beleza da minha namorada, a Íris. É um projeto simples e carinhoso para ajudá-la a apresentar os serviços dela de forma bonita e profissional.
 
-## Arquitetura do projeto
+**🌐 O site está no ar:** [https://iris-cherry.github.io/Iris---Cherry-Hair/](https://iris-cherry.github.io/Iris---Cherry-Hair/)
 
-```
-Iris---Cherry-Hair/
-├── index.html
-├── index.css
-├── script.js
-├── services.json
-├── testimonials.json
-├── images/
-│   ├── profile-placeholder.svg
-│   ├── galeria-1.svg … galeria-6.svg
-└── README.md
-```
+Este repositório está aqui apenas como portfólio.
 
-## Personalização rápida ✨
+---
 
-- **Fotos reais**: Substitua os SVGs da pasta `images/` pelas fotos reais dos clientes e da Íris. Mantenha os mesmos nomes ou ajuste os caminhos em `index.html` e nos arquivos JSON.
-- **WhatsApp**: Atualize o número e/ou a mensagem padrão em:
-	- atributo `href` dos botões com link para o WhatsApp no `index.html`;
-	- constantes `WHATSAPP_NUMBER` e `WHATSAPP_MESSAGE_TEMPLATE` dentro de `script.js`.
-- **Serviços**: Edite `services.json` para ajustar títulos, descrições e faixas de preço.
-- **Depoimentos**: Atualize `testimonials.json` com novos nomes, textos e avatares.
-- **Cores e temas**: Os tokens de cor e tipografia estão declarados no topo de `index.css`.
+## Sobre o Projeto
 
-## Recursos implementados
+O Cherry Hair é uma landing page com visual delicado e feminino, pensada para destacar os serviços de coloração, tratamentos capilares e cortes. A ideia era criar algo que transmitisse o cuidado e a atenção que a Íris oferece às clientes, além de facilitar o agendamento direto pelo WhatsApp.
 
-- Hero com CTA principal e botão para a seção de serviços.
-- Cards de serviços com bordas pontilhadas, hover suave e agendamento via WhatsApp.
-- Galeria em grid 2x3 com placeholders ilustrativos.
-- Carregamento dinâmico de serviços e depoimentos a partir dos arquivos JSON.
-- Seção de contato com CTA e link direto para telefonar ou acessar o Instagram.
-- Botão flutuante do WhatsApp sempre visível.
-- Microanimações (fade-in ao rolar, hover com leve elevação) e background com gradiente + padrão de estrelinhas.
+### Como o Site Foi Construído
 
-## Como visualizar localmente
+O projeto foi desenvolvido de forma bem direta e organizada:
 
-1. Faça o download ou clone este repositório.
-2. Abra a pasta `Iris---Cherry-Hair` no VS Code (recomendado) ou no explorador de arquivos.
-3. Abra `index.html` diretamente no navegador ou utilize uma extensão como *Live Server* para recarregar automaticamente.
+- **Estrutura HTML**: O site é composto por uma única página que apresenta todas as seções importantes — hero inicial, serviços oferecidos, galeria de trabalhos, depoimentos de clientes e informações de contato.
 
-## Publicação no GitHub Pages 🚀
+- **Estilização CSS**: Todo o visual foi criado com CSS puro, sem frameworks. O design usa um esquema de cores suaves (tons de rosa e branco), tipografia elegante (fontes do Google Fonts), e pequenas animações que dão vida à página quando você rola. O layout é responsivo, então funciona bem tanto no celular quanto no computador.
 
-1. Faça commit de todos os arquivos na branch `main`.
-2. Acesse **Settings → Pages** no repositório do GitHub.
-3. Em **Build and deployment**, escolha **Source: Deploy from a branch** e selecione a branch `main`, pasta `/ (root)`.
-4. Salve. Em alguns minutos a página estará disponível no endereço indicado pelo GitHub.
+- **Scripts JavaScript**: Alguns elementos do site são dinâmicos. Os serviços e depoimentos, por exemplo, são carregados automaticamente a partir de arquivos JSON, facilitando futuras atualizações sem mexer no código HTML. Também tem animações suaves de fade-in e um botão flutuante do WhatsApp que fica sempre visível.
 
-> Dica: após publicar, teste os botões do WhatsApp no celular para garantir que a mensagem padrão está correta.
+- **Organização**: Todo o conteúdo está bem separado — imagens em uma pasta própria, dados em arquivos JSON, estilos e scripts cada um no seu lugar. Isso torna o projeto fácil de manter e atualizar.
 
-## Stack utilizada
+### O que o Site Tem
 
-- HTML5 semântico
-- CSS3 com variáveis, animações e layout responsivo
-- JavaScript puro para carregar dados JSON e controlar animações
-- Google Fonts (Dancing Script & Poppins)
+- Seção de apresentação com chamada para ação
+- Cards de serviços com descrição e botões para agendar via WhatsApp
+- Galeria de fotos dos trabalhos realizados
+- Depoimentos de clientes
+- Informações de contato (telefone, Instagram, WhatsApp)
+- Design responsivo e animações suaves
 
-## Créditos
+---
 
-Design e desenvolvimento por Felixo • 2025.
+**Feito com carinho por Felixo** ✨
