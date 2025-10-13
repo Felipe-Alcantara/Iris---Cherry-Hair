@@ -108,11 +108,79 @@ function updateYear() {
   }
 }
 
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      
+      // Ignora links vazios ou apenas "#"
+      if (!href || href === '#') return;
+      
+      const targetElement = document.querySelector(href);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1200; // Duração em milissegundos (1.2 segundos)
+        let start = null;
+        
+        function animation(currentTime) {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        // Função de easing para suavizar o movimento
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+      }
+    });
+  });
+}
+
 function init() {
   setupAnimations();
   loadServices();
   loadTestimonials();
   updateYear();
+  setupConsultationCarousel();
+  setupSmoothScroll();
+}
+
+// Consultation Carousel
+function setupConsultationCarousel() {
+  const slides = document.querySelectorAll('.consultation__slide');
+  const navButtons = document.querySelectorAll('.consultation__nav-btn');
+  
+  if (!slides.length || !navButtons.length) return;
+  
+  navButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const slideNumber = button.getAttribute('data-slide-btn');
+      
+      // Remove active classes
+      slides.forEach((slide) => slide.classList.remove('consultation__slide--active'));
+      navButtons.forEach((btn) => btn.classList.remove('consultation__nav-btn--active'));
+      
+      // Add active classes
+      const targetSlide = document.querySelector(`[data-slide="${slideNumber}"]`);
+      if (targetSlide) {
+        targetSlide.classList.add('consultation__slide--active');
+        button.classList.add('consultation__nav-btn--active');
+      }
+    });
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);
